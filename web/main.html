@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <link rel="stylesheet" href="BlueEyesEngine/Common.css"/>
+    <link rel="stylesheet" href="BlueEyesEngine/SplashScreen.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <title>BlueEyes Engine</title>
+  </head>
+  <body>
+
+    <section class="SplashScreen">
+      <img src="BlueEyesEngine/BlueEyesEngine.png" height="100vh">
+      <p></p>
+    </section>
+
+    <section class="Header" style="margin-top: 40px;">
+      <img src="Images/Python.svg" width="128px" height="128px"/>
+      <p>股票歷史價格　<span style="font-weight: bold; color:rgb(255, 67, 67)">本程式不得用於考試</span></p>
+    </section>
+
+    <section class="Content">
+      <p>股票代號</p>
+      <input id="ticker" placeholder="請輸入股票代號">
+      <p>開始日期</p>
+      <input id="startDate" type="date" placeholder="開始時間">
+      <p>結束日期</p>
+      <input id="endDate" type="date" placeholder="結束時間">
+      <p>資料頻率</p>
+      <select id="frequency">
+        <option value="1d">每日</option>
+        <option value="1wk">每週</option>
+        <option value="1mo">每月</option>
+      </select>
+      <button class="buttonPrimary" onclick="Start()">輸出 Excel 檔案至桌面</button>
+      <button class="buttonPrimary" onclick="openMenu()">開啟選單</button>
+    </section>
+
+    <script src="BlueEyesEngine/Common.js"></script>
+    <script src="BlueEyesEngine/SplashScreen.js"></script>
+  </body>
+</html>

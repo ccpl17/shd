@@ -1,0 +1,51 @@
+/*****************************************************/
+/*                  BlueEyes Engine                  */
+/*                  Menu                             */
+/*                                                   */
+/* Version 1.0.0                                     */
+/* Date 2022/12/15                                   */
+/* Designed by Cenlun Chung Po Lun                   */
+/*****************************************************/
+
+.Menu{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--colorBlurShadow);
+    z-index: 2;
+    backdrop-filter: blur(var(--blurLevel));
+    justify-content: center;
+    align-items: center;
+}
+
+.MenuContent{
+    max-width: 100vw;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 0 50px var(--colorShadow);
+    text-align: center;
+    font-size: 25px;
+    color: var(--colorText);
+    font-weight: bold;
+}
+
+.AboutContent{
+    display: none;
+    max-width: 100vw;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 0 50px var(--colorText);
+    text-align: center;
+    font-size: 25px;
+    color: var(--colorText);
+    font-weight: bold;
+    overflow: auto;
+    max-height: 95vh;
+}

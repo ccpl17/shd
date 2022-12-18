@@ -1,0 +1,48 @@
+/*****************************************************/
+/*                  BlueEyes Engine                  */
+/*                  Splash Screen                    */
+/*                                                   */
+/* Version 1.0.0                                     */
+/* Date 2022/12/15                                   */
+/* Designed by Cenlun Chung Po Lun                   */
+/*****************************************************/
+
+*{
+    user-select: none;
+}
+
+
+.SplashScreen{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 200;
+    color: var(--colorPrimary);
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.SplashScreen.display-none{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: -10;
+    color: var(--colorPrimary);
+    text-align: center;
+    line-height: 90vh;
+    justify-content: center;
+    align-items: center;
+    transition: all .75s;
+}
