@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="BlueEyesEngine/Common.css"/>
     <link rel="stylesheet" href="BlueEyesEngine/Menu.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-    <title>BlueEyes Engine</title>
+    <title>ccpl17/shd @ BlueEyes Engine</title>
   </head>
   <body>
 
@@ -20,35 +20,39 @@
         <div class="AboutContent">
           <img src="BlueEyesEngine/BlueEyesEngine.png" height="100rem"/>
           <p style="padding-bottom: 20px; font-size: 25px; font-weight:bold;">
-            Python
+            <a href="https://github.com/ccpl17/shd" target="_blank">ccpl17/shd</a>
           </p>
           <span style="display: flex; justify-content: center;">
             <p style="padding-bottom: 20px; font-size: 20px; font-weight:normal; margin-right: 20px;">
-              程式版本：1.0.0<br>
-              日期：2022/12/16</p>
+              程式版本：1.1.0<br>
+              日期：2022/12/21</p>
             <p style="padding-bottom: 20px; font-size: 20px; font-weight:normal; margin-left: 20px;">
-              引擎版本：1.0.0<br>
-              日期：2022/12/15</p>
+              引擎版本：1.0.10<br>
+              日期：2022/12/21</p>
           </span>
           <p style="padding-bottom: 20px; font-size: 20px; font-weight:normal;">
           前端介面語言：HTML、CSS<br>
-          後端程序語言：Python、JavaScript、TypeScript<br>
+          後端程序語言：Python、JavaScript<br>
           <br>
-          第三方套件：<br>
+          支援的作業系統：<br>
+          Windows 7 或以上<br>
+          Windows 11 (Windows on ARM)<br>
+          macOS High Sierra (10.13) 或以上<br>
+          Linux<br>
+          <br>
+          使用的第三方套件：<br>
           <a href="https://github.com/python-eel/Eel" target="_blank">python-eel/Eel</a><br>
           <a href="https://github.com/ranaroussi/yfinance" target="_blank">ranaroussi/yfinance</a><br>
           <br>
           使用者介面設計 / 程式設計：鐘柏倫<br>
           Copyright © 2022 Cenlun Chung Po Lun<br>
           </p>
-          <img src="Images/Python.svg" height="50rem"/><br>
-          <img src="Images/Anaconda.png" height="50rem"/>
+          <img src="Images/Python.svg" height="50rem"/>
           <p style="font-size: 20px; font-weight:normal;">
-          Python 3.9.13 ('base': conda)</p>
+          Python 3.8.15</p>
           <p style="padding-bottom: 20px; font-size: 12px; font-weight:normal;">
-            "ANACONDA" 及其圖案是 Anaconda, Inc. 註冊的商標<br>
             Yahoo!、Y!Finance 與 Yahoo! finance 是 Yahoo, Inc. 註冊的商標<br>
-            免責聲明：本程式僅設計供個人用途、學習使用，<span style="font-weight: bold; color:rgb(255, 67, 67)">不得用於考試</span>
+            免責聲明：本程式僅設計供個人用途、原始碼交流、學習使用
           </p>
           <button class="buttonPrimary" onclick="backToMenu()">好</button>
         </div>
@@ -56,7 +60,7 @@
 
     <section class="Header" style="margin-top: 40px;">
       <img src="Images/Python.svg" width="128px" height="128px"/>
-      <p>股票歷史價格　<span style="font-weight: bold; color:rgb(255, 67, 67)">本程式不得用於考試</span></p>
+      <p>股票歷史價格</p>
     </section>
 
     <section class="Content">
@@ -72,7 +76,7 @@
         <option value="1wk">每週</option>
         <option value="1mo">每月</option>
       </select>
-      <button class="buttonPrimary" onclick="Start()">輸出 Excel 檔案至桌面</button>
+      <button class="buttonPrimary" onclick="Start()">輸出為 Excel 試算表</button>
       <button class="buttonPrimary" onclick="openMenu()">開啟選單</button>
     </section>
 
@@ -84,7 +88,7 @@
         frequency = document.getElementById("frequency").value;
         eel.fetch(ticker, startDate, endDate,frequency);
         alert("請至終端機查看結果");
-      }
+      }        
     </script>
 
     <script type="text/javascript" src="/eel.js"></script>
