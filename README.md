@@ -1,4 +1,4 @@
-## 前置作業
+## 如果是 macOS 使用者
 * [Google Chrome](https://www.google.com/chrome/) **必須** 安裝於系統中
 ## 理論上支援的作業系統
 * Windows 7 或以上
