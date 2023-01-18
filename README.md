@@ -1,5 +1,6 @@
-## 如果是 macOS 使用者
-* [Google Chrome](https://www.google.com/chrome/) **必須** 安裝於系統中
+## 如果是 Windows 使用者
+* [Microsoft Edge WebView2 執行階段](https://developer.microsoft.com/zh-tw/microsoft-edge/webview2/#download-section) **必須** 安裝於系統中
+* Windows 11 本身已經包含 Microsoft Edge WebView2 執行階段，可略過此步驟
 ## 理論上支援的作業系統
 * Windows 7 或以上
 * Windows 11 (Windows on ARM)
