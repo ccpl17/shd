@@ -1,19 +1,20 @@
-## 如果是 Windows 使用者
-* [Microsoft Edge WebView2 執行階段](https://developer.microsoft.com/zh-tw/microsoft-edge/webview2/#download-section) **必須** 安裝於系統中
-* Windows 11 本身已經包含 Microsoft Edge WebView2 執行階段，可略過此步驟
+## 前置作業
+* [Google Chrome](https://www.google.com/chrome/) **必須** 安裝於系統中
 ## 理論上支援的作業系統
 * Windows 7 或以上
-* Windows 11 (Windows on ARM)
-* macOS High Sierra (10.13) 或以上
+* macOS 10.13 或以上
 * Linux
 ## 通過測試的作業系統
 * Windows 7
 * Windows 8
 * Windows 8.1
 * Windows 10
-* Windows 11
-* Windows 11 (Windows on ARM)
-* macOS Ventura (Apple Silicon)
+* Windows 11 (x86_64)
+* Windows 11 (ARM64)
+* macOS 13.2 (Apple Silicon)
+* Ubuntu 18.04
+* Ubuntu 20.04
+* Ubuntu 22.04
 * Ubuntu 22.10
 ## 使用的第三方套件
 [python-eel/Eel](https://github.com/python-eel/Eel)  
