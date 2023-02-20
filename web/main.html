@@ -1,43 +1,139 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <link rel="stylesheet" href="BlueEyesEngine/Common.css"/>
-    <link rel="stylesheet" href="BlueEyesEngine/SplashScreen.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+    <link rel="stylesheet" href="BlueEyesEngine/BlueEyesEngine.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <script type="text/javascript" src="/eel.js"></script>
     <title>ccpl17/shd @ BlueEyes Engine</title>
-  </head>
-  <body>
+</head>
 
-    <section class="SplashScreen">
-      <img src="BlueEyesEngine/BlueEyesEngine.png" height="100vh">
-      <p style="margin: 0; font-weight: bold;">ccpl17/shd</p>
-    </section>
+<body>
+<section class="SplashScreen">
+    <img src="BlueEyesEngine/SVG/Banner.svg" height="100vh">
+    <label>ccpl17/shd</label>
+</section>
 
-    <section class="Header" style="margin-top: 40px;">
-      <img src="Images/Python.svg" width="128px" height="128px"/>
-      <p>股票歷史價格</p>
-    </section>
+<dialog id="about">
+    <form method="dialog">
+        <header>
+            <img src="BlueEyesEngine/SVG/Banner.svg"/>
+            <h2>
+                <a href="https://github.com/ccpl17/shd" target="_blank">ccpl17/shd</a>
+            </h2>
+        </header>
+        <article>
+            <p style="text-align: center; width: 100%;">使用者介面 / 程式設計<br>
+                © 2022-2023 鐘柏倫 (Cenlun Chung Po Lun)</p>
 
-    <section class="Content">
-      <p>股票代號</p>
-      <input id="ticker" placeholder="請輸入股票代號">
-      <p>開始日期</p>
-      <input id="startDate" type="date" placeholder="開始時間">
-      <p>結束日期</p>
-      <input id="endDate" type="date" placeholder="結束時間">
-      <p>資料頻率</p>
-      <select id="frequency">
+            <span>
+                    <p>
+                        程式版本：2.0.0<br>
+                        日期：2023/02/20
+                    </p>
+                    <p>
+                        引擎版本：2.0.0<br>
+                        日期：2023/02/20
+                    </p>
+                </span>
+
+            <h3>系統需求</h3>
+            <p>
+                Windows 7 以上版本<br>
+                macOS High Sierra 10.13 以上版本<br>
+                Linux
+            </p>
+
+            <h3>使用的第三方套件</h3>
+            <p>
+                <a href="https://github.com/python-eel/Eel" target="_blank">python-eel/Eel</a><br>
+                <a href="https://github.com/ranaroussi/yfinance" target="_blank">ranaroussi/yfinance</a><br>
+            </p>
+
+            <h3></h3>
+            <p style="font-size: 12px; text-align: center;">
+                Yahoo!、Y!Finance 與 Yahoo! finance 是 Yahoo, Inc. 註冊的商標<br>
+                免責聲明：僅供個人用途、原始碼交流、教育學習使用
+            </p>
+        </article>
+        <footer>
+            <menu>
+                <button onclick="menu.showModal()">好</button>
+            </menu>
+        </footer>
+    </form>
+</dialog>
+
+<dialog id="_alert">
+    <form method="dialog">
+        <header>
+            <img src="BlueEyesEngine/SVG/Icon.svg">
+        </header>
+        <article>
+            <p>請至終端機查看執行結果</p>
+        </article>
+        <footer>
+            <menu>
+                <button>好</button>
+            </menu>
+        </footer>
+    </form>
+</dialog>
+
+<header>
+    <img src="BlueEyesEngine/SVG/Icon.svg" height="128px">
+    <h1>股票歷史價格</h1>
+</header>
+
+<main>
+    <label>股票代號</label>
+    <input id="ticker" placeholder="請輸入股票代號">
+
+    <label>開始日期</label>
+    <input id="startDate" type="date" placeholder="開始時間">
+
+    <label>結束日期</label>
+    <input id="endDate" type="date" placeholder="結束時間">
+
+    <label>資料頻率</label>
+    <select id="frequency">
         <option value="1d">每日</option>
         <option value="1wk">每週</option>
         <option value="1mo">每月</option>
-      </select>
-      <button class="buttonPrimary" onclick="Start()">輸出為 Excel 試算表</button>
-      <button class="buttonPrimary" onclick="openMenu()">開啟選單</button>
-    </section>
+    </select>
 
-    <script src="BlueEyesEngine/Common.js"></script>
-    <script src="BlueEyesEngine/SplashScreen.js"></script>
-  </body>
+    <button onclick="Start()">輸出為 Excel 試算表</button>
+    <button onclick="location.reload()">重新載入</button>
+    <button onclick="about.showModal()">關於</button>
+</main>
+
+<script>const SplashScreen = document.querySelector(".SplashScreen");
+
+        document.addEventListener("DOMContentLoaded", (e) => {
+            setTimeout(() => {
+                SplashScreen.classList.add("display-none");
+            }, 1000);
+        });
+
+        window.addEventListener("contextmenu", e => e.preventDefault());
+
+        function Start() {
+            ticker = document.getElementById("ticker").value;
+            startDate = document.getElementById("startDate").value;
+            endDate = document.getElementById("endDate").value;
+            frequency = document.getElementById("frequency").value;
+            eel.fetch(ticker, startDate, endDate, frequency);
+        }
+
+        eel.expose(Alert)
+        function Alert() {
+            _alert.showModal();
+        }
+
+</script>
+</body>
+
 </html>

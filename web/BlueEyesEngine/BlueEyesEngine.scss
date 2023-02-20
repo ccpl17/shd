@@ -1,0 +1,209 @@
+/*****************************************************/
+/*                  BlueEyes Engine                  */
+/*                                                   */
+/* Version 2.0.0 (2023/02/20)                        */
+/* https://github.com/ccpl17/BlueEyesEngine          */
+/* © 2022-2023 鐘柏倫 (Cenlun Chung Po Lun)           */
+/* CC-BY-NC-SA                                       */
+/*****************************************************/
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Noto Sans TC");
+
+@import "ColorPalette.css";
+@import "GlobalVariables.css";
+
+* {
+    box-sizing: border-box;
+    color: var(--global-text-color);
+    font-family: "Montserrat", "Noto Sans TC";
+    text-align: justify;
+    position: relative;
+    user-select: none;
+}
+
+html:has(dialog[open]) {
+    overflow: hidden;
+}
+
+button {
+    background: var(--button-background);
+    border-radius: var(--button-border-radius);
+    border: var(--button-border);
+    box-shadow: var(--button-box-shadow);
+    color: var(--button-text-color);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    transition: .15s;
+
+    &:hover {
+        background: var(--button-hover-background);
+        box-shadow: var(--button-hover-box-shadow);
+        color: var(--button-hover-text-color);
+    }
+
+    &:active {
+        background: var(--button-active-background);
+        box-shadow: var(--button-active-box-shadow);
+        color: var(--button-active-text-color);
+    }
+}
+
+dialog {
+    background: var(--dialog-background);
+    border: var(--dialog-border);
+    border-radius: var(--dialog-border-radius);
+    box-shadow: var(--dialog-box-shadow);
+    color: var(--dialog-text-color);
+    margin: auto;
+    max-block-size: min(80vh, 100%);
+    max-block-size: min(80dvb, 100%);
+    max-inline-size: min(90vw, 60ch);
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+
+    &::backdrop {
+        backdrop-filter: blur(25px);
+    }
+
+    &>form {
+        align-items: start;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        max-block-size: 80vh;
+        max-block-size: 80dvb;
+        padding: 10px;
+
+        &>header {
+            align-items: center;
+            background: var(--dialog-header-background);
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            justify-content: center;
+            margin: 0;
+            text-align: center;
+
+            &>img {
+                height: 72px;
+                margin-block-start: 15px;
+            }
+        }
+
+        &>article {
+            display: grid;
+            justify-items: flex-start;
+            max-block-size: 100%;
+            overflow-y: auto;
+            overscroll-behavior-y: contain;
+            padding-inline: 15px;
+        }
+
+        &>footer {
+            display: block;
+            background: var(--dialog-footer-background);
+
+            &>menu {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin: 0;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+input {
+    background: var(--input-background);
+    border: var(--input-border);
+    border-radius: var(--input-border-radius);
+    box-shadow: var(--input-box-shadow);
+    color: var(--input-text-color);
+    cursor: text;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 25px;
+    transition: var(--input-transition);
+
+    &[type="checkbox"] {
+        accent-color: var(--checkbox-accent-color);
+        box-shadow: var(--checkbox-box-shadow);
+        cursor: pointer;
+        margin-right: 15px;
+
+        &:checked {
+            accent-color: var(--checkbox-accent-color);
+            box-shadow: none;
+        }
+    }
+
+    &[type="radio"] {
+        accent-color: var(--radio-accent-color);
+        cursor: pointer;
+        margin-right: 15px;
+
+        &:checked {
+            accent-color: var(--radio-accent-color);
+            box-shadow: var(--checkbox-checked-box-shadow);
+        }
+    }
+
+    &::placeholder {
+        color: var(--input-placeholder-color);
+    }
+
+    &:focus {
+        background: var(--input-focus-background);
+        border: var(--input-focus-border);
+        color: var(--input-focus-text-color);
+
+        &::placeholder {
+            color: var(--input-focus-placeholder-color);
+        }
+    }
+}
+
+select {
+    background: var(--select-background);
+    border: var(--select-border);
+    border-radius: var(--select-border-radius);
+    box-shadow: var(--select-box-shadow);
+    color: var(--select-text-color);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    transition: var(--select-transition);
+}
+
+textarea {
+    background: var(--textarea-background);
+    border: var(--textarea-border);
+    border-radius: var(--textarea-border-radius);
+    box-shadow: var(--textarea-box-shadow);
+    color: var(--textarea-text-color);
+    cursor: text;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 25px;
+    transition: var(--textarea-transition);
+
+    &::placeholder {
+        color: var(--textarea-placeholder-color);
+    }
+
+    &:focus {
+        background: var(--textarea-focus-background);
+        border: var(--textarea-focus-border);
+        color: var(--textarea-focus-text-color);
+
+        &::placeholder {
+            color: var(--textarea-focus-placeholder-color);
+        }
+    }
+}

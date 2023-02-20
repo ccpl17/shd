@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/*****************************************************/
+/*                  BlueEyes Engine                  */
+/*                  Color Palette                    */
+/*                                                   */
+/* Version 2.0.0 (2023/02/20)                        */
+/* https://github.com/ccpl17/BlueEyesEngine          */
+/* © 2022-2023 鐘柏倫 (Cenlun Chung Po Lun)           */
+/* CC-BY-NC-SA                                       */
+/*****************************************************/
+:root {
+  --primary-color-light-2: unset;
+  --primary-color-light-1: unset;
+  --primary-color: white;
+  --primary-color-dark-1: unset;
+  --primary-color-dark-2: unset;
+  --secondary-color-light-2: unset;
+  --secondary-color-light-1: #B3D9FF;
+  --secondary-color: #0074E8;
+  --secondary-color-dark-1: #003B7C;
+  --secondary-color-dark-2: #001B40;
+  --accent-color-light-2: unset;
+  --accent-color-light-1: #FFD9B3;
+  --accent-color: #E87400;
+  --accent-color-dark-1: #7C4100;
+  --accent-color-dark-2: #402500;
+  --neutral-color-light-2: unset;
+  --neutral-color-light-1: unset;
+  --neutral-color: #3C3C3C;
+  --neutral-color-dark-1: unset;
+  --neutral-color-dark-2: unset;
+}/*# sourceMappingURL=ColorPalette.css.map */

@@ -1,29 +1,54 @@
 from os import path
-from random import randint
 from tkinter import filedialog
+from platform import system
 from yfinance import download
 
 import eel
+import tkinter
+
 
 @eel.expose
-def fetch(ticker, startDate, endDate, frequency):
+def fetch(ticker, start_date, end_date, frequency):
     try:
-        print("\n")
-        fetch_data = download(ticker, start = startDate, end = endDate, interval = frequency)
+        if _platform == "Darwin":
+            tk.deiconify()
+            tk.update()
+        destination = filedialog.askdirectory(parent=tk, title="選擇檔案儲存位置")
+        if _platform == "Darwin":
+            tk.withdraw()
+            tk.update()
+        eel.Alert()
+        print(f'{ticker}\n{start_date} to {end_date}')
+        fetch_data = download(ticker, start=start_date, end=end_date, interval=frequency)
         fetch_data.index = fetch_data.index.strftime('%Y-%m-%d')
-        print(f"\n{fetch_data}")
-        destination = path.abspath(filedialog.askdirectory())
         fetch_data.to_excel(f"{destination}/{str(ticker)}.xlsx")
-        print("\n操作成功\n")
-    except:
-        print("\n操作失敗\n")
+        print()
+    except Exception as e:
+        print(e)
+        print()
 
-port = randint(10000,65535)
 
+_platform = system()
 root = path.dirname(path.realpath(__file__))
 
-print(f"*************************************************\n\n                 BlueEyes Engine\n                 ccpl17/shd\n\n*************************************************\n\n程式啟動中，請耐心等候\n\n端口號碼：{port}\n")
+tk = tkinter.Tk()
+tk.title("選擇檔案儲存位置")
+tk.withdraw()
+tk.wm_attributes('-topmost', 1)
+if _platform == "Windows":
+    tk.iconbitmap(default=f'{root}/web/favicon.ico')
+tk.update()
+
+print("*************************************************")
+print()
+print("                 BlueEyes Engine")
+print("                 ccpl17/shd")
+print()
+print("*************************************************")
+print()
+print("程式啟動中，請耐心等候")
+print()
 
 eel.init(f'{root}/web')
 
-eel.start('main.html', port = port, shutdown_delay = 1)
+eel.start('main.html', port=0)

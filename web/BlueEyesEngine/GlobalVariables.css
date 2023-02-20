@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/*****************************************************/
+/*                  BlueEyes Engine                  */
+/*                  Global Variable                  */
+/*                                                   */
+/* Version 2.0.0 (2023/02/20)                        */
+/* https://github.com/ccpl17/BlueEyesEngine          */
+/* © 2022-2023 鐘柏倫 (Cenlun Chung Po Lun)           */
+/* CC-BY-NC-SA                                       */
+/*****************************************************/
+:root {
+  --background: var(--primary-color);
+  --box-shadow: 0 0 8px var(--neutral-color);
+  --global-text-color: var(--neutral-color);
+  --button-background: var(--secondary-color);
+  --button-border: var(--neutral-color);
+  --button-border-radius: 8px;
+  --button-box-shadow: unset;
+  --button-text-color: white;
+  --button-hover-background: var(--secondary-color-dark-1);
+  --button-hover-box-shadow: unset;
+  --button-hover-text-color: white;
+  --button-active-background: var(--secondary-color-dark-2);
+  --button-active-box-shadow: var(--box-shadow);
+  --button-active-text-color: white;
+  --checkbox-accent-color: unset;
+  --checkbox-box-shadow: unset;
+  --checkbox-checked-box-shadow: unset;
+  --checkbox-background-color: unset;
+  --dialog-background: var(--background);
+  --dialog-border: unset;
+  --dialog-border-radius: 25px;
+  --dialog-box-shadow: 0 0 50px var(--neutral-color);
+  --dialog-header-background: var(--background);
+  --dialog-footer-background: var(--background);
+  --dialog-text-color: var(--neutral-color);
+  --input-background: var(--secondary-color-light-1);
+  --input-border: unset;
+  --input-border-color: unset;
+  --input-border-radius: 8px;
+  --input-box-shadow: unset;
+  --input-focus-background: var(--secondary-color-light-1);
+  --input-focus-border: unset;
+  --input-focus-placeholder-color: unset;
+  --input-focus-text-color: unset;
+  --input-placeholder-color: unset;
+  --input-text-color: var(--neutral-color);
+  --input-transition: unset;
+  --radio-accent-color: unset;
+  --select-background: var(--secondary-color-light-1);
+  --select-border: unset;
+  --select-border-color: unset;
+  --select-border-radius: 8px;
+  --select-box-shadow: unset;
+  --select-option-hover-background: unset;
+  --select-text-color: var(--neutral-color);
+  --select-transition: unset;
+  --textarea-background: var(--secondary-color-light-1);
+  --textarea-border: unset;
+  --textarea-border-color: unset;
+  --textarea-border-radius: 8px;
+  --textarea-box-shadow: unset;
+  --textarea-focus-background: var(--secondary-color-light-1);
+  --textarea-focus-border: unset;
+  --textarea-focus-placeholder-color: unset;
+  --textarea-focus-text-color: unset;
+  --textarea-placeholder-color: unset;
+  --textarea-text-color: var(--neutral-color);
+  --textarea-transition: unset;
+}/*# sourceMappingURL=GlobalVariables.css.map */
